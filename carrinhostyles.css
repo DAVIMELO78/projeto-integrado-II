@@ -1,0 +1,65 @@
+/* Estilo personalizado */
+body {
+    background-color: #f8f9fa;
+}
+
+header {
+    border-bottom: 2px solid #ccc;
+}
+
+.produto-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item {
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner {
+    display: flex;
+    overflow: hidden;
+}
+
+#itens-carrinho {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 15px;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-carrinho button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.item-carrinho button:hover {
+    background-color: #c82333;
+}
+
+#formas-pagamento ul {
+    padding-left: 0;
+}
+
+#formas-pagamento li {
+    margin-bottom: 10px;
+}
+
+#formas-pagamento label {
+    margin-left: 5px;
+}
+
+#card-errors {
+    color: #dc3545;
+    margin-top: 10px;
+}

@@ -103,3 +103,36 @@ footer {
     color: white;
 }
 
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .container-cabecalho {
+        flex-direction: column;
+    }
+
+    .container-navegacao {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .container-quem-somos {
+        flex-direction: column;
+    }
+
+    .servico {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-navegacao a {
+        padding: 5px 10px;
+    }
+
+    .servico img {
+        width: 80px;
+    }
+
+    .social-icons img {
+        width: 40px;
+    }
+}

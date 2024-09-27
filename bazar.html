@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APAE - Bazar</title>
+
+    <!--estilos da página-->
+    <link rel="stylesheet" href="bazar.css">
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="logo apae marilia.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .card {
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+        .card-text {
+            color: #6c757d;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            padding: 8px 16px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        /* Alinhar grade de produtos ao centro */
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Ajustar o container dos cards */
+        .container-produtos {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="container-cabecalho">
+        <a href="index.html">
+            <img src="logo apae marilia.png" alt="logo da empresa" title="Associação de Pais e Amigos dos Excepcionais">
+        </a>
+        <h3>Associação de Pais e Amigos dos Excepcionais</h3>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="container-navegacao">
+        <a href="index.html">Quem Somos</a>
+        <a href="servicos.html">Nossos Serviços</a>
+        <a href="bazar.html">Bazar</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="loginace.html">Login</a>
+    </nav>  
+
+    <!-- Grade de produtos centralizada -->
+    <div class="container-produtos">
+        <div class="row product-grid">
+            <!-- Produto 1 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Vestido</h5>
+                        <p class="card-text">Vestido lycra.</p>
+                        <p class="price">R$ 10,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 1', 10)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Calça jeans</h5>
+                        <p class="card-text">Calça jeans feminina cós alto.</p>
+                        <p class="price">R$ 20,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 2', 20)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Blusa floral</h5>
+                        <p class="card-text">Blusa de algodão.</p>
+                        <p class="price">R$ 30,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 3', 30)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Short jeans</h5>
+                        <p class="card-text">Short jeans tam 40.</p>
+                        <p class="price">R$ 20,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 4', 20)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Saia longa</h5>
+                        <p class="card-text">Saia longa tamanho 38.</p>
+                        <p class="price">R$ 25,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 5', 25)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Blazer</h5>
+                        <p class="card-text">Blusinha cropped.</p>
+                        <p class="price">R$ 26,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 6', 26)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 7 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta</h5>
+                        <p class="card-text">Camiseta algodão.</p>
+                        <p class="price">R$ 15,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 7', 15)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 8 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Jaqueta</h5>
+                        <p class="card-text">Jaqueta de couro.</p>
+                        <p class="price">R$ 50,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 8', 50)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 9 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Tênis</h5>
+                        <p class="card-text">Tênis esportivo.</p>
+                        <p class="price">R$ 80,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 9', 80)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 10 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 10">
+                    <div class="card-body">
+                        <h5 class="card-title">Óculos de Sol</h5>
+                        <p class="card-text">Óculos de sol unissex.</p>
+                        <p class="price">R$ 45,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 10', 45)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 11 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 11">
+                    <div class="card-body">
+                        <h5 class="card-title">Mochila</h5>
+                        <p class="card-text">Mochila escolar.</p>
+                        <p class="price">R$ 35,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 11', 35)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 12 -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto 12">
+                    <div class="card-body">
+                        <h5 class="card-title">Relógio</h5>
+                        <p class="card-text">Relógio digital.</p>
+                        <p class="price">R$ 60,00</p>
+                        <button class="btn btn-custom" onclick="adicionarAoCarrinho('Produto 12', 60)">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Ver serviços em contato -->
+    <section class="container-servico-contato">
+        <h2>Siga-nos em nossas redes sociais</h2>
+        <div>
+            <img src="watss.png" alt="contato">
+            <img src="instagram.png" alt="contato">
+            <img src="face.jpg" alt="contato">
+        </div>
+    </section>
+
+    <script>
+        function adicionarAoCarrinho(nome, preco) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.push({ nome, preco });
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            alert('Produto adicionado ao carrinho!');
+        }
+    </script>
+
+    <footer>
+        APAE - Associação de Pais e Amigos dos Excepcionais de Marília/SP &copy; 2024 | &reg; Todos os direitos reservados.
+    </footer>
+</body>
+</html>

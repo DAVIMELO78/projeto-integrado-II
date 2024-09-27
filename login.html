@@ -29,18 +29,18 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.3;
-            z-index: -1;
+            opacity: 0.3; /* Ajuste a opacidade da imagem de fundo aqui */
+            z-index: -1; /* Coloca a imagem atrás do conteúdo */
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco levemente transparente */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
-            z-index: 1;
+            z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
         }
 
         h2 {
@@ -55,7 +55,7 @@
             color: #555;
         }
 
-        input[type="email"], input[type="password"] {
+        input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
@@ -84,6 +84,14 @@
             margin-bottom: 15px;
         }
 
+        .error-message {
+            color: red;
+            display: none;
+            margin-top: -8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
         .register-link {
             text-align: center;
             margin-top: 15px;
@@ -96,38 +104,6 @@
 
         .register-link a:hover {
             text-decoration: underline;
-        }
-
-        /* Modo de alto contraste */
-        .high-contrast {
-            background-color: black;
-            color: yellow;
-        }
-
-        .high-contrast input[type="email"], 
-        .high-contrast input[type="password"], 
-        .high-contrast input[type="submit"] {
-            background-color: black;
-            color: yellow;
-            border-color: yellow;
-        }
-
-        .accessibility-controls {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .accessibility-controls button {
-            padding: 10px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            background-color: #ddd;
-            border: 1px solid #aaa;
-        }
-
-        .accessibility-controls button:hover {
-            background-color: #ccc;
         }
     </style>
 </head>
@@ -151,42 +127,6 @@
                 <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
             </div>
         </form>
-
-        <!-- Controles de acessibilidade -->
-        <div class="accessibility-controls">
-            <button onclick="toggleFontSize()">Aumentar Fonte</button>
-            <button onclick="toggleContrast()">Alto Contraste</button>
-        </div>
     </div>
-
-    <script>
-        // Variável para controlar o tamanho da fonte
-        var fontSizeIncreased = false;
-
-        // Função para aumentar e diminuir o tamanho da fonte
-        function toggleFontSize() {
-            var body = document.body;
-            if (!fontSizeIncreased) {
-                body.style.fontSize = '120%';
-            } else {
-                body.style.fontSize = '100%';
-            }
-            fontSizeIncreased = !fontSizeIncreased;
-        }
-
-        // Variável para controlar o modo de alto contraste
-        var highContrastEnabled = false;
-
-        // Função para ativar e desativar o modo de alto contraste
-        function toggleContrast() {
-            var body = document.body;
-            if (!highContrastEnabled) {
-                body.classList.add('high-contrast');
-            } else {
-                body.classList.remove('high-contrast');
-            }
-            highContrastEnabled = !highContrastEnabled;
-        }
-    </script>
 </body>
 </html>
